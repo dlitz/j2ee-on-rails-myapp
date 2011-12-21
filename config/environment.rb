@@ -39,6 +39,9 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 
+  # Allow multiple applications to use the same database.
+  config.active_record.table_name_prefix = 'myapp_'
+
   # Fall back to config/database.sample.yml
   unless File.exist?(config.database_configuration_file)
     config.database_configuration_file =
