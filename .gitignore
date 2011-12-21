@@ -1,0 +1,11 @@
+/.bundle
+/log
+/tmp
+/public/javascripts/cache_*
+/public/stylesheets/cache_*
+/db/*.sqlite3
+/db/*_structure.sql
+/db/schema.rb
+/config/database.yml
+/VERSION
+/*.war
