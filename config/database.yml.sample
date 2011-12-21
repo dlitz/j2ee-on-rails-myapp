@@ -18,8 +18,9 @@ test:
   encoding: UTF8
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
+  adapter: jdbc
+  jndi: jdbc/acme-myapp
   timeout: 5000
-  encoding: UTF8
+  pool: 32          # Glassfish's default maximum connection pool size
+  wait_timeout: 30  # max seconds to wait while checkout out a connection before raising a timeout error
+  encoding: UTF8    # Without this, we depend on the JDBC connection pool to be configured for UTF-8.
