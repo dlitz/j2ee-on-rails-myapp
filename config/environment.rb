@@ -47,4 +47,10 @@ Rails::Initializer.run do |config|
     config.database_configuration_file =
       File.join(config.root_path, "config", "database.sample.yml")
   end
+
+  # Enable some (but not all) of the stuff enabled by config.threadsafe!,
+  # so that we catch related bugs in development and/or testing.
+  config.preload_frameworks = true
+  config.dependency_loading = false
+  config.eager_load_paths += Dir.glob("vendor/plugins/*/app/{models,controllers,helpers,metal}")
 end
